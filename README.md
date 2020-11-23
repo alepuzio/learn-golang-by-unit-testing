@@ -2,9 +2,12 @@
 --------------------------------------
 This project was born after my decision to learn Golang with [this tutorial](https://quii.gitbook.io/learn-go-with-tests/)
 .
+
 In the past I started to learn Golang by doing a pet project, but after I gave up quickly because my efforts are bigger than my progress.
 
+
 This tutorial is smart and it was born from an idea: "If the unit test are a part of documentation, why not they can be parto of the documentation to learn a language programming?"
+
 
 The source code is divided by arguments by level: 
 * you have a problem (Red)
@@ -15,6 +18,11 @@ The source code is divided by arguments by level:
 ## Features
 
 ### Future
+
+#### After finishing the tutorial
+* write the documentation to every function of the project
+
+#### Before studiyng the tutorial
 * Array and slice
 * Strut method and interfaces
 * Rest of tutorial
