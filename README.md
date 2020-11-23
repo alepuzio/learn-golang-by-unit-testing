@@ -22,14 +22,12 @@ The source code is divided by arguments by level:
 #### After finishing the tutorial
 * write the documentation to every function of the project
 
-#### Before studiyng the tutorial
-* Array and slice
-* Strut method and interfaces
+#### Before finisching the tutorial
 * Rest of tutorial
 * put the Feature in a table in Readme
 
 ### Next
-* Iteration
+* Strut method and interfaces
 
 ### Current
  * none
@@ -38,6 +36,8 @@ The source code is divided by arguments by level:
 
 * hello world
 * Integer
+* Iteration
+* Array and slice
 
 ## Status CI Integration
  
