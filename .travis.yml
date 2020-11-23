@@ -1,20 +1,17 @@
 os: linux
 dist: xenial
 
-# python
-language: python
-python: 3.8.6 
+# go
+language: go
+go: 1.15 
 
-# define dependencsy
-install:
-  - pip install -r requirements.txt
+# define dependencies
 
 # give authorizations to the script for Travis 
 before_script: 
-  - chmod +x ./scripts/unit_testing.sh
 
 # tests
-script: ./scripts/unit_testing.sh
+script: go test -v 
 
 # allowed only these branch
 branches:
