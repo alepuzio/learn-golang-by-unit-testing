@@ -1,1 +1,1 @@
-go test -cov
+go test -cover
