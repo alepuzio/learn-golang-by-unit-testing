@@ -27,7 +27,7 @@ The source code is divided by arguments by level:
 * put the Feature in a table in Readme
 
 ### Next
-* Strut method and interfaces
+ * pointers 
 
 ### Current
  * none
@@ -38,6 +38,8 @@ The source code is divided by arguments by level:
 * Integer
 * Iteration
 * Array and slice
+* Strut method and interfaces
+
 
 ## Status CI Integration
  
