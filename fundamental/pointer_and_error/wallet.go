@@ -4,7 +4,7 @@ package main
 https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/pointers-and-errors
 */
 import "fmt"
-
+import "errors"
 
 type Bitcoin int
 
@@ -28,12 +28,15 @@ func (b Bitcoin) String() string {
     return fmt.Sprintf("%d BTC", b)
 }
 
-func (w *Wallet) Withdraw(amount Bitcoin) {
+func (w *Wallet) Withdraw(amount Bitcoin) error {
+
+    if amount > w.balance {
+        return errors.New("oh no")
+    }
+
     w.balance -= amount
+    return nil
 }
-
-
-
 
 
 
