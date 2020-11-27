@@ -1,19 +1,19 @@
 package main
 
-import "fmt"
+/**
+https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/pointers-and-errors
+*/
+
+type Bitcoin int
 
 type Wallet struct {
-    balance int
+    balance Bitcoin
 }
 
-
-func (w *Wallet) Deposit(amount int) {
-    fmt.Printf("address of balance in Deposit is %v \n", &w.balance)
+func (w *Wallet) Deposit(amount Bitcoin) {
     w.balance += amount
 }
 
-
-
-func (w *Wallet) Balance() int {
-    return (*w).balance
+func (w *Wallet) Balance() Bitcoin {
+    return w.balance
 }
