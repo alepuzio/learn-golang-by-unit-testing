@@ -6,7 +6,7 @@ func TestWallet(t *testing.T) {
 
     wallet := Wallet{}
 
-    wallet.Deposit(Bitcoin(10))
+    wallet.Deposit(Bitcoin(20))
 
     got := wallet.Balance()
 
