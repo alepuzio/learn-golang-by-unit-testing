@@ -62,3 +62,50 @@ func TestAdd(t *testing.T) {
         t.Errorf("got %q want %q", got, want)
     }
 }
+
+
+func TestUpdate(t *testing.T) {
+    word := "test"
+    definition := "this is just a test"
+    dictionary := Dictionary{word: definition}
+    newDefinition := "new definition"
+
+    dictionary.Update(word, newDefinition)
+
+    assertDefinition(t, dictionary, word, newDefinition)
+}
+
+func assertDefinition(t *testing.T, dictionary Dictionary, word, definition string) {
+    t.Helper()
+
+    got, err := dictionary.Search(word)
+    if err != nil {
+        t.Fatal("should find added word:", err)
+    }
+
+    if definition != got {
+        t.Errorf("got %q want %q", got, definition)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
