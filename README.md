@@ -16,29 +16,46 @@ The source code is divided by arguments by level:
 
 
 ## Features
+The states are: [*O*] to do,  [*X*] done, [*N*] Next
 
-### Future
+### Fundamentals
+* [X] hello world
+* [X] Integer
+* [X] Iteration
+* [X] Array and slice
+* [X] Strut method and interfaces
+* [X] pointers 
+* [N] Maps
+* [O] Dependency Injection
+* [O] Mocking
+* [O] Concurrency
+* [O] Select
+* [O] Reflection
+* [O] Sync
+* [O] Context
+* [O] Intro to property based tests
+* [O] Maths
 
-#### After finishing the tutorial
-* write the documentation to every function of the project
+### Building and application
 
-#### Before finisching the tutorial
-* Rest of tutorial
-* put the Feature in a table in Readme
+* [O] intro
+* [O] http server
+* [O] JSON, routing and embedded
+* [O] IO and sorting
+* [O] command line 
+* [O] Time
+* [O] websocket
 
-### Next
- * pointers 
+### Q&A
+* [O] OS Exec
+* [O] Error Types
+* [O] Context-aware Reader
+* [O] Revisiting Http handlers
 
-### Current
- * none
+### After the tutorial
 
-### Past
-
-* hello world
-* Integer
-* Iteration
-* Array and slice
-* Strut method and interfaces
+* [O]  write the documentation to every function of the project
+* [O]  put the Feature in a table in Readme
 
 
 ## Status CI Integration
