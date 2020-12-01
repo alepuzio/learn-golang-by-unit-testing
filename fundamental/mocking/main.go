@@ -3,20 +3,48 @@ package main
 import (
 	"fmt"
 	"io"
+	"os"
 	"time"
 )
-
-// Countdown prints a countdown from 3 to out.
 
 
 const finalWord = "Go!"
 const countdownStart = 3
 
-func Countdown(out io.Writer) {
+
+type Sleeper interface {
+    Sleep()
+}
+
+type SpySleeper struct {
+    Calls int
+}
+
+func (s *SpySleeper) Sleep() {
+    s.Calls++
+}
+
+//default brhaviour
+type DefaultSleeper struct {}
+
+func (d *DefaultSleeper) Sleep() {
+    time.Sleep(1 * time.Second)
+}
+
+func Countdown(out io.Writer, sleeper Sleeper) {
+    for i := countdownStart; i > 0; i-- {
+        sleeper.Sleep()
+    }
+
     for i := countdownStart; i > 0; i-- {
         fmt.Fprintln(out, i)
     }
-    
-    time.Sleep(1 * time.Second)
+
+    sleeper.Sleep()
     fmt.Fprint(out, finalWord)
+}
+
+func main() {
+    sleeper := &DefaultSleeper{}
+    Countdown(os.Stdout, sleeper)
 }
