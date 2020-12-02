@@ -26,9 +26,9 @@ The states are: [*O*] to do,  [*X*] done, [*N*] Next
 * [X] Strut method and interfaces
 * [X] pointers 
 * [X] Maps
-* [N] Dependency Injection
+* [X] Dependency Injection
 * [O] Mocking
-* [O] Concurrency
+* [N] Concurrency
 * [O] Select
 * [O] Reflection
 * [O] Sync
