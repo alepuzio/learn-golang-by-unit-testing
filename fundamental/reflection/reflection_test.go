@@ -17,9 +17,9 @@ func TestWalk(t *testing.T) {
             "Struct with one string field",
             struct {
                 Name string
-		City string
-            }{ "Chris","London"},
-            []string{"Chris","London"},
+		Age int
+            }{ "Chris",32},
+            []string{"Chris"},
         },
     }
 
