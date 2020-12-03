@@ -28,8 +28,8 @@ The states are: [*O*] to do,  [*X*] done, [*N*] Next
 * [X] Maps
 * [X] Dependency Injection
 * [O] Mocking
-* [N] Concurrency
-* [O] Select
+* [O] Concurrency
+* [N] Select
 * [O] Reflection
 * [O] Sync
 * [O] Context
