@@ -16,7 +16,8 @@ The source code is divided by arguments by level:
 
 
 ## Features
-The states are: [*O*] to do,  [*X*] done, [*N*] Next
+The states are: [*O*] open to do,  [*X*] done, [*N*] Next, [*W*] working
+
 
 ### Fundamentals
 * [X] hello world
@@ -27,11 +28,11 @@ The states are: [*O*] to do,  [*X*] done, [*N*] Next
 * [X] pointers 
 * [X] Maps
 * [X] Dependency Injection
-* [O] Mocking
-* [O] Concurrency
-* [N] Select
-* [O] Reflection
-* [O] Sync
+* [X] Mocking
+* [X] Concurrency
+* [X] Select
+* [W] Reflection
+* [N] Sync
 * [O] Context
 * [O] Intro to property based tests
 * [O] Maths
