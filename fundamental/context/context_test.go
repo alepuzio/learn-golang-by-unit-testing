@@ -1,29 +1,45 @@
 package main
 
 import (
+	"context"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+	"time"
 )
-
-type StubStore struct {
-	response string
-}
-
-func (s *StubStore) Fetch() string {
-	return s.response
-}
 
 func TestServer(t *testing.T) {
 	data := "hello, world"
-	svr := Server(&StubStore{data})//TODO study again the object in golang
 
-	request := httptest.NewRequest(http.MethodGet, "/", nil)//body param nil
-	response := httptest.NewRecorder()
+	t.Run("returns data from store", func(t *testing.T) {
+		store := &SpyStore{response: data, t: t}// TOD study again the object in golang
+		svr := Server(store)
+		request := httptest.NewRequest(http.MethodGet, "/", nil)//boyd nill
+		response := httptest.NewRecorder()
 
-	svr.ServeHTTP(response, request)
+		svr.ServeHTTP(response, request)
 
-	if response.Body.String() != data {
-		t.Errorf(`got "%s", want "%s"`, response.Body.String(), data)
-	}
+		if response.Body.String() != data {
+			t.Errorf(`got "%s", want "%s"`, response.Body.String(), data)
+		}
+	})
+
+	t.Run("tells store to cancel work if request is cancelled", func(t *testing.T) {
+		store := &SpyStore{response: data, t: t}
+		svr := Server(store)
+
+		request := httptest.NewRequest(http.MethodGet, "/", nil)//body nil
+
+		cancellingCtx, cancel := context.WithCancel(request.Context())
+		time.AfterFunc(5*time.Millisecond, cancel)
+		request = request.WithContext(cancellingCtx)
+
+		response := &SpyResponseWriter{}
+
+		svr.ServeHTTP(response, request)
+
+		if response.written {
+			t.Error("a response should not have been written")
+		}
+	})
 }
