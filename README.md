@@ -31,10 +31,10 @@ The states are: [*O*] open to do,  [*X*] done, [*N*] Next, [*W*] working
 * [X] Mocking
 * [X] Concurrency
 * [X] Select
-* [W] Reflection
-* [N] Sync
-* [O] Context
-* [O] Intro to property based tests
+* [X] Reflection
+* [X] Sync
+* [W] Context
+* [N] Intro to property based tests
 * [O] Maths
 
 ### Building and application
