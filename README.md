@@ -33,9 +33,9 @@ The states are: [*O*] open to do,  [*X*] done, [*N*] Next, [*W*] working
 * [X] Select
 * [X] Reflection
 * [X] Sync
-* [W] Context
-* [N] Intro to property based tests
-* [O] Maths
+* [X] Context
+* [X] Intro to property based tests
+* [X] Maths
 
 ### Building and application
 
