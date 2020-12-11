@@ -5,7 +5,9 @@ import (
 	"net/http/httptest"
 	"testing"
 )
-
+/**
+verifies that the player has the correct score
+*/
 func TestRecordingWinsAndRetrievingThem(t *testing.T) {
 	store := NewInMemoryPlayerStore()
 	server := PlayerServer{store}

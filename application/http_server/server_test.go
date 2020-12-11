@@ -23,10 +23,7 @@ func (s *StubPlayerStore) RecordWin(name string) {
 
 func TestGETPlayers(t *testing.T) {
 	store := StubPlayerStore{
-		map[string]int{
-			"Pepper": 20,
-			"Floyd":  10,
-		},
+		map[string]int{ "Pepper": 20, "Floyd":  10, },
 		nil,
 	}
 	server := &PlayerServer{&store}
@@ -60,9 +57,7 @@ func TestGETPlayers(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			request := newGetScoreRequest(tt.player)
 			response := httptest.NewRecorder()
-
 			server.ServeHTTP(response, request)
-
 			assertStatus(t, response.Code, tt.expectedHTTPStatus)
 			assertResponseBody(t, response.Body.String(), tt.expectedScore)
 		})
@@ -95,24 +90,32 @@ func TestStoreWins(t *testing.T) {
 		}
 	})
 }
-
+/*
+assert status func
+*/
 func assertStatus(t *testing.T, got, want int) {
 	t.Helper()
 	if got != want {
 		t.Errorf("did not get correct status, got %d, want %d", got, want)
 	}
 }
-
+/*
+GET request
+*/
 func newGetScoreRequest(name string) *http.Request {
 	req, _ := http.NewRequest(http.MethodGet, fmt.Sprintf("/players/%s", name), nil)
 	return req
 }
-
+/**
+POST request
+*/
 func newPostWinRequest(name string) *http.Request {
 	req, _ := http.NewRequest(http.MethodPost, fmt.Sprintf("/players/%s", name), nil)
 	return req
 }
-
+/**
+assert body fuc
+*/
 func assertResponseBody(t *testing.T, got, want string) {
 	t.Helper()
 	if got != want {

@@ -6,17 +6,23 @@ import (
 	"strings"
 )
 
-// PlayerStore stores score information about players.
+/* 
+PlayerStore stores score information about players.
+*/
 type PlayerStore interface {
 	GetPlayerScore(name string) int
 	RecordWin(name string)
 }
 
-// PlayerServer is a HTTP interface for player information.
+/*
+PlayerServer is a HTTP interface for player information.
+*/
 type PlayerServer struct {
 	store PlayerStore
 }
-
+/**
+decide the http method to run
+*/
 func (p *PlayerServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	player := strings.TrimPrefix(r.URL.Path, "/players/")
 	switch r.Method {
@@ -27,16 +33,20 @@ func (p *PlayerServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+/**
+ * show the score of the player
+ */
 func (p *PlayerServer) showScore(w http.ResponseWriter, player string) {
 	score := p.store.GetPlayerScore(player)
-
 	if score == 0 {
 		w.WriteHeader(http.StatusNotFound)
 	}
-
 	fmt.Fprint(w, score)
 }
 
+/**
+*
+*/
 func (p *PlayerServer) processWin(w http.ResponseWriter, player string) {
 	p.store.RecordWin(player)
 	w.WriteHeader(http.StatusAccepted)
