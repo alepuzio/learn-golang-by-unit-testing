@@ -1,7 +1,7 @@
 package poker_test
 
 import (
-	"github.com/quii/learn-go-with-tests/command-line/v3"
+	"github.com/alepuzio/learn-golang-by-unit-testing/application/command-line"
 	"io"
 	"strings"
 	"testing"
