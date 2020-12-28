@@ -40,12 +40,12 @@ The states are: [*O*] open to do,  [*X*] done, [*N*] Next, [*W*] working
 ### Building and application
 
 * [X] Intro
-* [W] Http server
-* [N] JSON, routing and embedded
-* [O] IO and sorting
-* [O] Command line 
+* [X] Http server
+* [X] JSON, routing and embedded
+* [W] IO and sorting
+* [N] Command line 
 * [O] Time
-* [O] websocket
+* [O] Websocket
 
 ### Q&A
 * [O] OS Exec
