@@ -39,13 +39,13 @@ The states are: [*O*] open to do,  [*X*] done, [*N*] Next, [*W*] working
 
 ### Building and application
 
-* [O] intro
-* [O] http server
-* [O] JSON, routing and embedded
-* [O] IO and sorting
-* [O] command line 
+* [X] Intro
+* [X] Http server
+* [X] JSON, routing and embedded
+* [W] IO and sorting
+* [N] Command line 
 * [O] Time
-* [O] websocket
+* [O] Websocket
 
 ### Q&A
 * [O] OS Exec
